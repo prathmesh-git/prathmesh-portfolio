@@ -4,6 +4,9 @@ import { afterEach } from 'vitest';
 
 afterEach(cleanup);
 
+// jsdom doesn't implement scrollIntoView
+Element.prototype.scrollIntoView = () => {};
+
 class TestIntersectionObserver {
   readonly root = null;
   readonly rootMargin = '0px';

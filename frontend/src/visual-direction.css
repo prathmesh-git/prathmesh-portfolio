@@ -1030,8 +1030,18 @@ input {
 
 .ask-launcher {
   border-color: rgba(189, 131, 244, 0.52);
-  background: #17121e;
+  background: linear-gradient(135deg, #17121e, #1a1425);
   color: #f0eaf4;
+  box-shadow:
+    0 8px 30px #0007,
+    0 0 40px rgba(189, 131, 244, 0.12);
+}
+.ask-launcher-glow {
+  background: linear-gradient(135deg, rgba(233, 118, 214, 0.15), rgba(115, 223, 240, 0.08) 60%, transparent);
+}
+.ask-launcher-label {
+  color: var(--magenta);
+  font: 600 11px var(--sans);
 }
 .chatbot-orb {
   display: block;
@@ -1044,53 +1054,100 @@ input {
   box-shadow: 0 0 13px rgba(115, 223, 240, 0.2);
 }
 .ask-launcher:hover {
-  background: #24182c;
-}
-.ask-launcher span {
-  color: var(--magenta);
+  background: linear-gradient(135deg, #24182c, #261a30);
+  box-shadow:
+    0 12px 40px #0008,
+    0 0 50px rgba(189, 131, 244, 0.2);
 }
 .ask-panel {
-  border-color: rgba(204, 176, 227, 0.38);
-  background: #121018;
+  border-color: rgba(204, 176, 227, 0.3);
+  background: #0f0d16;
+  box-shadow:
+    0 25px 80px #000d,
+    0 0 1px rgba(189, 131, 244, 0.3),
+    inset 0 1px 0 rgba(189, 131, 244, 0.06);
+}
+.ask-head {
+  background: linear-gradient(180deg, #161220, #120f19);
 }
 .ask-avatar {
-  overflow: hidden;
-  padding: 2px;
   border-color: var(--magenta);
   background: #050508;
+}
+.ask-avatar::after {
+  box-shadow: 0 0 16px rgba(233, 118, 214, 0.25);
 }
 .ask-avatar .chatbot-orb {
   width: 100%;
   height: 100%;
   box-shadow: none;
 }
+.ask-head-info small svg {
+  color: var(--magenta);
+}
+.ask-close {
+  border-color: rgba(225, 215, 237, 0.15);
+}
+.ask-close:hover {
+  color: var(--cyan);
+  border-color: rgba(115, 223, 240, 0.35);
+  background: rgba(115, 223, 240, 0.06);
+}
 .ask-demo-note {
   color: var(--cyan);
-  background: #19131f;
+  background: linear-gradient(90deg, #15111d, #19131f);
+  border-bottom-color: rgba(115, 223, 240, 0.05);
 }
-.ask-reply {
-  background: #1d1924;
+.ask-messages::-webkit-scrollbar-thumb {
+  background: #3a2f48;
+}
+.ask-reply .ask-bubble-content p {
+  background: #1a1624;
   color: #d4cbd9;
 }
-.ask-user {
-  background: #30213b;
+.ask-user .ask-bubble-content p {
+  background: linear-gradient(135deg, #31213f, #2d1d3a);
   color: #f3e9f7;
 }
+.ask-bubble-avatar {
+  border-color: rgba(233, 118, 214, 0.35);
+  background: #0a0810;
+}
+.ask-bubble-content time {
+  color: #58505e;
+}
+.ask-typing-dots i {
+  background: var(--magenta);
+}
 .ask-prompts button {
-  border-color: rgba(216, 201, 230, 0.2);
+  border-color: rgba(216, 201, 230, 0.18);
   color: #c2b8c8;
 }
 .ask-prompts button:hover {
   border-color: var(--cyan);
   color: var(--cyan);
+  background: rgba(115, 223, 240, 0.06);
 }
-.ask-panel input {
-  background: #0b0a10;
+.ask-form {
+  background: #0d0b14;
+}
+.ask-form input {
+  background: #0a0810;
   color: #f0eaf4;
 }
-.ask-panel form button {
+.ask-form input:focus {
+  border-color: rgba(189, 131, 244, 0.4);
+  box-shadow: 0 0 0 3px rgba(189, 131, 244, 0.08);
+}
+.ask-form input::placeholder {
+  color: #4a425a;
+}
+.ask-form button {
   background: var(--magenta);
   color: #190c19;
+}
+.ask-form button:hover:not(:disabled) {
+  background: #f098e2;
 }
 
 .credential-line {

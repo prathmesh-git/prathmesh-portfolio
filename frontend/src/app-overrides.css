@@ -120,8 +120,8 @@
   outline: 2px solid var(--green);
   outline-offset: 3px;
 }
-.ask-panel form button:disabled {
-  opacity: 0.5;
+.ask-form button:disabled {
+  opacity: 0.45;
   cursor: wait;
 }
 @media (max-width: 640px) {
