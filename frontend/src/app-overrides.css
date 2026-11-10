@@ -1,0 +1,146 @@
+:root {
+  color-scheme: dark;
+  --bg: #111513;
+  --bg-elevated: #181d1a;
+  --bg-card: rgba(255, 255, 255, 0.025);
+  --border: rgba(230, 239, 232, 0.12);
+  --accent: #8cdaa5;
+  --accent-dim: rgba(140, 218, 165, 0.13);
+  --accent-glow: rgba(140, 218, 165, 0.08);
+  --text-1: #e9eee9;
+  --text-2: rgba(233, 238, 233, 0.64);
+  --text-3: rgba(233, 238, 233, 0.38);
+  --nav-bg: rgba(17, 21, 19, 0.83);
+}
+.topnav {
+  display: flex;
+  align-items: center;
+}
+.nav-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.hero-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.arch-wrap {
+  overflow: hidden;
+}
+.node-igw {
+  left: 16%;
+  top: 14%;
+}
+.node-nat {
+  left: 34%;
+  top: 14%;
+}
+.arch-toolbar button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.script-example {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 24px;
+  margin-top: 15px;
+  border: 1px solid var(--line);
+  background: #141a16;
+  padding: 16px 18px;
+}
+.script-label {
+  font: 8px var(--mono);
+  color: var(--green);
+  letter-spacing: 0.08em;
+}
+.script-example p {
+  font-size: 10px;
+  color: #8f9b91;
+  line-height: 1.7;
+}
+.script-example pre {
+  margin: 0;
+  overflow: auto;
+  color: #b6c9b8;
+  font: 9px/1.8 var(--mono);
+}
+.script-example code {
+  font: inherit;
+}
+.script-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.script-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+.script-choices button {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: #9ca99f;
+  padding: 5px 7px;
+  font: 8px var(--mono);
+  cursor: pointer;
+}
+.script-choices button[aria-pressed='true'],
+.script-choices button:hover {
+  color: var(--green);
+  border-color: #8cdaa566;
+}
+.credential-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  border-top: 1px solid var(--line);
+  margin-top: 14px;
+  padding-top: 15px;
+  color: var(--green);
+}
+.credential-line b,
+.credential-line small {
+  display: block;
+}
+.credential-line b {
+  color: var(--text-1);
+  font-size: 11px;
+}
+.credential-line small {
+  margin-top: 5px;
+  color: #88958b;
+  font: 9px/1.6 var(--mono);
+}
+:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+.ask-panel form button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+@media (max-width: 640px) {
+  .arch-wrap {
+    overflow-x: auto;
+  }
+  .arch-toolbar,
+  .arch-detail,
+  .arch-legend {
+    min-width: 760px;
+  }
+  .arch-canvas {
+    min-width: 760px;
+  }
+  .script-example {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .script-example pre {
+    font-size: 8px;
+  }
+}
