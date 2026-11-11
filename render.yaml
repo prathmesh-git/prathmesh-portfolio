@@ -2,22 +2,11 @@ services:
   - type: web
     name: prathmesh-portfolio-api
     runtime: node
-    rootDir: backend
-    buildCommand: npm install && npm run build
-    startCommand: npm start
+    buildCommand: npm install && npm run build --workspace backend
+    startCommand: npm start --workspace backend
     healthCheckPath: /api/health
     envVars:
-      - key: GROQ_API_KEY
-        sync: false
       - key: GROQ_MODEL
         value: openai/gpt-oss-20b
       - key: FRONTEND_ORIGIN
-        sync: false
-  - type: web
-    name: prathmesh-portfolio
-    runtime: static
-    buildCommand: npm install && npm run build
-    staticPublishPath: frontend/dist
-    envVars:
-      - key: VITE_API_BASE_URL
         sync: false
