@@ -59,8 +59,13 @@ Update names, links, projects, skills, and learning topics in `frontend/src/data
 
 ## Deployment
 
-- Frontend: import the repository into Vercel; the included `frontend/vercel.json` builds the `frontend` workspace and serves the Vite output. Configure `VITE_API_BASE_URL` to the deployed API origin if hosting the API separately.
-- API: deploy `backend` as a Node service using `render.yaml`. Set `FRONTEND_ORIGIN` to the deployed frontend origin. Add `GROQ_API_KEY` and optionally `GROQ_MODEL` only in the API host's secret environment settings if AI responses are wanted.
+- Render: use the included `render.yaml` to create both services. The API is a Node web service and the frontend is a static site.
+  1. In Render, choose **New → Blueprint**, connect this repository, and apply the blueprint.
+  2. On `prathmesh-portfolio-api`, set `FRONTEND_ORIGIN` to the final frontend URL, for example `https://prathmesh-portfolio.onrender.com`.
+  3. On `prathmesh-portfolio`, set `VITE_API_BASE_URL` to the API URL, for example `https://prathmesh-portfolio-api.onrender.com`. Because this is a Vite build variable, trigger a new deploy after changing it.
+  4. Optionally set `GROQ_API_KEY` and `GROQ_MODEL` on the API service. Without a key, the assistant remains in demo mode.
+  5. Verify the API at `/api/health`, then open the frontend and test the assistant.
+- Vercel alternative: the included `vercel.json` builds the frontend workspace and serves the Vite output. Set `VITE_API_BASE_URL` to the deployed API origin and set `FRONTEND_ORIGIN` on the API to the Vercel URL.
 - Domain: point `prathmeshcloud.site` to the frontend host using the DNS records provided by that host. Domain ownership/records have not been configured by this project.
 
 The portfolio currently describes only facts supported by the supplied résumé, local Unreel project documentation, and public GitHub repository details. The Moodle project was omitted because it does not appear in the supplied résumé or the inspected project information.
